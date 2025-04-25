@@ -16,7 +16,7 @@ export default function Sidebar() {
     <>
       {/* Mobile sidebar toggle */}
       <button
-        className="md:hidden fixed top-4 left-4 z-50 p-2 rounded-md bg-white dark:bg-gray-800 shadow"
+        className="lg:hidden fixed top-4 left-4 z-50 p-2 rounded-md bg-white dark:bg-gray-800 shadow"
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
@@ -26,7 +26,7 @@ export default function Sidebar() {
       <aside
         className={`fixed inset-y-0 left-0 z-40 w-64 bg-white dark:bg-gray-800 shadow-lg transform ${
           isOpen ? "translate-x-0" : "-translate-x-full"
-        } md:translate-x-0 transition-transform duration-200 ease-in-out`}
+        } lg:translate-x-0 transition-transform duration-200 ease-in-out`}
       >
         <div className="flex flex-col h-full p-4">
           <div className="flex items-center justify-between mb-8">

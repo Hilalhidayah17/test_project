@@ -1,7 +1,7 @@
 import { fetchUserWithPosts } from "@/utils/api";
 import { UserWithPosts } from "@/types";
 import UserDetails from "@/components/UserDetail";
-
+export const revalidate = 60;
 export default async function UserDetailPage({
   params,
 }: {

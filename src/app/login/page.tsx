@@ -22,7 +22,7 @@ export default function LoginPage() {
       router.push("/");
     } catch (err: any) {
       setError(err.message || "Login failed");
-      toast.error(err.message);
+      toast.error("Login Failed");
     }
   };
 
