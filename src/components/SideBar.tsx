@@ -40,7 +40,7 @@ export default function Sidebar() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className={`flex items-center p-3 rounded-lg ${
+                    className={`flex items-center p-3 mt-5 lg:mt-0 rounded-lg ${
                       pathname === item.href
                         ? "bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-200"
                         : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
