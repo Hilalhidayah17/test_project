@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useRouter, usePathname } from "next/navigation";
 import { ModeToggle } from "./ThemeToggle";
-import path from "path";
 
 export default function Header() {
   const router = useRouter();
@@ -30,7 +29,7 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white dark:bg-gray-900 text-black dark:text-white">
+    <header className="bg-white dark:bg-gray-800 text-black dark:text-white">
       <div className="flex items-center justify-between  px-6 py-4">
         <div className="text-lg font-bold text-gray-800 dark:text-white hidden lg:inline">
           Dashboard

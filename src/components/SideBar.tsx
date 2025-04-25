@@ -4,8 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FiHome, FiMenu, FiX } from "react-icons/fi";
-import { ModeToggle } from "./ThemeToggle";
-// import ThemeToggle from "./ThemeToggle";
 
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,7 +40,7 @@ export default function Sidebar() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className={`flex items-center p-3 mt-5 rounded-lg ${
+                    className={`flex items-center p-3 rounded-lg ${
                       pathname === item.href
                         ? "bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-200"
                         : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
