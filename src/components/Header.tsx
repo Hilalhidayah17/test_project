@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useRouter, usePathname } from "next/navigation";
-import { set } from "react-hook-form";
+import { ThemeToggle } from "./ThemeToggle";
 
 export default function Header() {
   const router = useRouter();
@@ -30,7 +30,7 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white dark:bg-gray-800 shadow-sm">
+    <header className="bg-white dark:bg-gray-800 shadow-sm dark:text-red-300 text-black">
       <div className="flex items-center justify-between  px-6 py-4">
         <div className="text-lg font-bold text-gray-800 dark:text-white hidden lg:inline">
           Dashboard
@@ -38,6 +38,7 @@ export default function Header() {
         <div></div>
 
         <div className="flex items-center space-x-4">
+          <ThemeToggle />
           {isLoggedIn === null ? (
             <span className="text-gray-500 text-sm">Checking...</span>
           ) : isLoggedIn ? (
