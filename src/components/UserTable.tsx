@@ -35,7 +35,7 @@ export default function UserTable({ initialUsers }: UserTableProps) {
     // Sort
     result.sort((a, b) => {
       const aValue = a[sortField];
-      console.log(aValue, "<<<");
+
       const bValue = b[sortField];
 
       if (aValue < bValue) return sortDirection === "asc" ? -1 : 1;

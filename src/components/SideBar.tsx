@@ -10,11 +10,7 @@ export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
-  const navItems = [
-    { href: "/", icon: FiHome, label: "Dashboard" },
-    { href: "/dashboard/users", icon: FiUsers, label: "Users" },
-    { href: "/settings", icon: FiSettings, label: "Settings" },
-  ];
+  const navItems = [{ href: "/", icon: FiHome, label: "Dashboard" }];
 
   return (
     <>

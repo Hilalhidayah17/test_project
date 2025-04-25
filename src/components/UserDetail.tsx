@@ -3,12 +3,16 @@
 import { UserWithPosts } from "@/types";
 import { useForm } from "react-hook-form";
 import PostList from "./PostList";
+import { updateUserData } from "@/utils/api";
+import { useState } from "react";
+import { toast } from "react-toastify";
 
 interface UserDetailsProps {
   user: UserWithPosts;
 }
 
 export default function UserDetails({ user }: UserDetailsProps) {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const {
     register,
     handleSubmit,
@@ -17,10 +21,19 @@ export default function UserDetails({ user }: UserDetailsProps) {
     defaultValues: user,
   });
 
-  const onSubmit = (data: UserWithPosts) => {
-    // In a real app, you would send this to your API
-    console.log("Updated user data:", data);
-    alert("User data updated successfully!");
+  const onSubmit = async (data: UserWithPosts) => {
+    setIsSubmitting(true);
+    try {
+      await updateUserData(data.id, data);
+      console.log("Updated user data:", data);
+      toast.success("User data updated successfully!");
+    } catch (error) {
+      console.error("Error updating user data:", error);
+      toast.error("Failed to update user data. Please try again.");
+      return;
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -92,13 +105,15 @@ export default function UserDetails({ user }: UserDetailsProps) {
               />
             </div>
           </div>
-
           <div className="flex justify-end">
             <button
               type="submit"
-              className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              disabled={isSubmitting}
+              className={`px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${
+                isSubmitting ? "opacity-50 cursor-not-allowed" : ""
+              }`}
             >
-              Save Changes
+              {isSubmitting ? "Saving..." : "Save Changes"}
             </button>
           </div>
         </form>

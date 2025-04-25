@@ -1,3 +1,4 @@
+import { User } from "@/types";
 import axios from "axios";
 
 const API_BASE_URL = "https://jsonplaceholder.typicode.com";
@@ -8,9 +9,15 @@ export const fetchUsers = async () => {
   return response.data;
 };
 
-// post Data
+// fetch post Data
 export const fetchPosts = async () => {
   const response = await axios.get(`${API_BASE_URL}/posts`);
+  return response.data;
+};
+
+// Update Data
+export const updateUserData = async (id: number, data: Partial<User>) => {
+  const response = await axios.patch(`${API_BASE_URL}/users/${id}`, data);
   return response.data;
 };
 
