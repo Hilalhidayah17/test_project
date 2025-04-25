@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Test Project
 
-## Getting Started
+This is a sample Next.js project with a user dashboard and login functionality. The project uses Tailwind CSS for styling and React for building the UI components. It also includes dark mode functionality and user authentication.
 
-First, run the development server:
+## Table of Contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [Technologies](#technologies)
+- [Setup](#setup)
+- [Dependencies](#dependencies)
+- [Running the Project](#running-the-project)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies / Dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js** - A React framework for building server-side rendered web applications.
+- **Tailwind CSS** - A utility-first CSS framework for creating modern UIs.
+- **React** - A JavaScript library for building user interfaces.
+- **React Icons** - A library of popular icons for React applications.
+- **React Toastify** - For showing toast notifications. -**JWT With Jose** - JWT for authentication and session (token inside cookies) and jose is needed for JWT can run in edge runtime (since there is no backend)
+  **shadcn** - For component and dark mode
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Setup
 
-## Learn More
+To set up the project locally, follow these steps:
 
-To learn more about Next.js, take a look at the following resources:
+1. **Clone the Repository**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   Clone this repository to your local machine using Git:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```bash
+   git clone https://github.com/Hilalhidayah17/test_project.git
 
-## Deploy on Vercel
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Install Dependencies**
+   Navigate to the project folder and install the required dependencies:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   cd test_project
+   npm install
+
+3. **Configure Environment Variables**
+   Make sure to configure any necessary environment variables. If you are using authentication, you may need to configure API keys or tokens in .env.local.
+
+   JWT_SECRET=supersecretdevkey123
+
+4. **Run**
+   npm run dev
