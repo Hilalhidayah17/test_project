@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FiHome, FiMenu, FiX } from "react-icons/fi";
+import { ModeToggle } from "./ThemeToggle";
 // import ThemeToggle from "./ThemeToggle";
 
 export default function Sidebar() {
@@ -30,14 +31,15 @@ export default function Sidebar() {
       >
         <div className="flex flex-col h-full p-4">
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-xl font-bold text-gray-800 dark:text-white">
+            <h2 className="hidden lg:inline text-xl font-bold text-gray-800 dark:text-white">
               Admin Panel
             </h2>
+
             {/* <ThemeToggle /> */}
           </div>
 
           <nav className="flex-1">
-            <ul className="space-y-2">
+            <ul className="space-y-4 lg:space-y-2">
               {navItems.map((item) => (
                 <li key={item.href}>
                   <Link

@@ -4,7 +4,7 @@ import "./globals.css";
 import Sidebar from "@/components/SideBar";
 import Header from "@/components/Header";
 import { ToastContainer } from "react-toastify";
-import { ThemeProvider } from "next-themes";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,16 +27,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className="bg-gray-100 dark:bg-gray-900`>"
+    >
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           <div className="flex h-screen bg-gray-100 dark:bg-gray-900">
             <Sidebar />
             <div className="flex-1 flex flex-col overflow-hidden">
               <ToastContainer />
               <Header />
+
               <main className="flex-1 overflow-y-auto p-4 lg:ml-[250px]">
                 {children}
               </main>
