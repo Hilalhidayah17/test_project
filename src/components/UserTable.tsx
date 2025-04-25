@@ -10,7 +10,7 @@ interface UserTableProps {
 }
 
 export default function UserTable({ initialUsers }: UserTableProps) {
-  const [users, setUsers] = useState<User[]>(initialUsers);
+  const [users] = useState<User[]>(initialUsers);
   const [searchTerm, setSearchTerm] = useState("");
   const [sortField, setSortField] = useState<keyof User>("name");
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");

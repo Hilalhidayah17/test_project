@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FiHome, FiUsers, FiSettings, FiMenu, FiX } from "react-icons/fi";
+import { FiHome, FiMenu, FiX } from "react-icons/fi";
 // import ThemeToggle from "./ThemeToggle";
 
 export default function Sidebar() {
