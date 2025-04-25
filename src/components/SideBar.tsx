@@ -34,8 +34,6 @@ export default function Sidebar() {
             <h2 className="hidden lg:inline text-xl font-bold text-gray-800 dark:text-white">
               Admin Panel
             </h2>
-
-            {/* <ThemeToggle /> */}
           </div>
 
           <nav className="flex-1">
@@ -44,7 +42,7 @@ export default function Sidebar() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className={`flex items-center p-3 rounded-lg ${
+                    className={`flex items-center p-3 mt-5 rounded-lg ${
                       pathname === item.href
                         ? "bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-200"
                         : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"

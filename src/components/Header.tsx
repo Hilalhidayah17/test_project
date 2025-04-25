@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useRouter, usePathname } from "next/navigation";
 import { ModeToggle } from "./ThemeToggle";
+import path from "path";
 
 export default function Header() {
   const router = useRouter();
@@ -20,7 +21,7 @@ export default function Header() {
 
   useEffect(() => {
     checkLogin();
-  }, []);
+  }, [pathname]);
 
   const handleLogout = async () => {
     await axios.post("/api/auth/logout");
