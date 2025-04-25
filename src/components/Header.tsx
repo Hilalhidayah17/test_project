@@ -9,7 +9,6 @@ export default function Header() {
   const router = useRouter();
   const pathname = usePathname();
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
-  console.log(pathname);
 
   const checkLogin = () => {
     if (pathname == "/login") {
@@ -21,7 +20,7 @@ export default function Header() {
 
   useEffect(() => {
     checkLogin();
-  }, [isLoggedIn, pathname]);
+  }, []);
 
   const handleLogout = async () => {
     await axios.post("/api/auth/logout");

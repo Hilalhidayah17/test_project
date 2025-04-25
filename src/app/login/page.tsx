@@ -20,8 +20,9 @@ export default function LoginPage() {
       localStorage.setItem("token", token);
       toast.success("Login Success");
       router.push("/");
-    } catch (err) {
-      setError("Login failed");
+    } catch (error: unknown) {
+      setError("Invalid username or password");
+      console.error(error);
       toast.error("Login Failed");
     }
   };
